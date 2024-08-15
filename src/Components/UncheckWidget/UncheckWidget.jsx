@@ -7,14 +7,14 @@ const UncheckWidget = ({ isOpen, onClose }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <div className="modal-header">
-          <h2>Uncheck Widget</h2>
+          <h4>Uncheck Widget</h4>
           <button className="close-button" onClick={onClose}>
             X
           </button>
         </div>
         <div className="options">
-          <button>Option 1</button>
-          <button>Option 2</button>
+          <h3>CSPM</h3>
+          <h3>CWPP</h3>
           <button>Option 3</button>
           <button>Option 4</button>
         </div>
@@ -27,6 +27,10 @@ const UncheckWidget = ({ isOpen, onClose }) => {
             <input type="checkbox" />
             Checkbox 2
           </label>
+        </div>
+        <div className="UncheckBtnsConfirmBtn">
+          <button className="Confirm">Confirm</button>
+          <button className="Cancel">Cancel</button>
         </div>
       </div>
     </div>
