@@ -1,0 +1,41 @@
+.executiveDashboardContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.ExecutiveListContainer {
+  gap: 4px;
+}
+
+.dashboard-left,
+.dashboard-right {
+  flex: 1;
+}
+
+.dashboard-left {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-right {
+  flex: 1;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: fit-content; */
+  padding: 15px 20px;
+  gap: 5px;
+}
+
+.AddWidgetBtn {
+  background-color: #b39494;
+  border: none;
+  color: white;
+  padding: 7px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}

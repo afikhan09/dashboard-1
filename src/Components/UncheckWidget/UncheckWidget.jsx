@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import "./UncheckWidget.css";
+import { DashboardContext } from "../../Context/DashboardContext";
 
 const UncheckWidget = ({ isOpen, onClose }) => {
-  //   if (!isOpen) return null;
+  const { dashBoardData, removeWidgetFromCategory } =
+    useContext(DashboardContext);
 
   return (
     <div className="modal-overlay">
@@ -12,25 +15,36 @@ const UncheckWidget = ({ isOpen, onClose }) => {
             X
           </button>
         </div>
-        <div className="options">
-          <h3>CSPM</h3>
-          <h3>CWPP</h3>
-          <button>Option 3</button>
-          <button>Option 4</button>
-        </div>
-        <div className="checkboxes">
-          <label>
-            <input type="checkbox" />
-            Checkbox 1
-          </label>
-          <label>
-            <input type="checkbox" />
-            Checkbox 2
-          </label>
+
+        <div>
+          <div className="options">
+            {dashBoardData.categories.map((category) => (
+              <div key={category.id} className="categoryheader">
+                <h3>{category.name}</h3>
+                <div className="checkboxes">
+                  {category.widgets.map((widget) => (
+                    <label key={widget.id}>
+                      <input
+                        onClick={() =>
+                          removeWidgetFromCategory(category.id, widget.id)
+                        }
+                        type="checkbox"
+                      />
+                      <h3>{widget.name}</h3>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="UncheckBtnsConfirmBtn">
-          <button className="Confirm">Confirm</button>
-          <button className="Cancel">Cancel</button>
+          <button onClick={onClose} className="Confirm">
+            Confirm
+          </button>
+          <button onClick={onClose} className="Cancel">
+            Cancel
+          </button>
         </div>
       </div>
     </div>
