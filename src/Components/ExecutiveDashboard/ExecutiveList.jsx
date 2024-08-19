@@ -53,12 +53,6 @@ const ExecutiveList = () => {
                 </div>
               </div>
             ))}
-
-            {/* <div className="dashboard-right">
-               <button className="AddWidgetBtn">Add widget</button> 
-              {/* <AddWidget /> */}
-            {/* <button className="UncheckWidgetBtn">Uncheck Widget</button>
-            </div>  */}
           </div>
         </div>
       )}
